@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Resizer – Free Online Tool</title>
+  <meta name="description" content="Resize images online for free. Maintain aspect ratio or set custom dimensions. SEO-friendly and AdSense ready.">
+  <link rel="canonical" href="https://www.example.com/resizer.html" />
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Resizer – Free Online Tool">
+  <meta property="og:description" content="Resize images online for free. Maintain aspect ratio or set custom dimensions.">
+  <meta property="og:image" content="https://www.example.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * { outline-color: #2563eb; }
+    html { scroll-behavior: smooth; }
+    .ad-slot { background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- Header -->
+<header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg"><span class="text-blue-600">▦</span> Image Tools</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="compressor.html" class="hover:text-blue-600">Compressor</a>
+        <a href="resizer.html" class="hover:text-blue-600 font-bold">Resizer</a>
+        <a href="faq.html" class="hover:text-blue-600">FAQ</a>
+        <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Resize Your Images</h1>
+    <p class="text-lg md:text-xl mb-6">Resize images by percentage or exact dimensions. Maintain aspect ratio or customize freely. Fast and safe.</p>
+  </div>
+</section>
+
+<!-- Resizer Tool -->
+<section class="max-w-3xl mx-auto px-6 py-12 bg-white rounded-2xl shadow-lg -mt-12 relative z-10">
+  <div class="flex flex-col gap-6">
+
+    <!-- Image Upload -->
+    <input type="file" id="imageInput" accept="image/*" class="border rounded-lg p-2">
+
+    <!-- Resize Options -->
+    <div class="flex flex-col gap-2">
+      <label class="font-semibold">Resize Method:</label>
+      <div class="flex gap-4 items-center">
+        <label><input type="radio" name="resizeMethod" value="percent" checked> Percentage</label>
+        <label><input type="radio" name="resizeMethod" value="custom"> Custom Dimensions</label>
+      </div>
+    </div>
+
+    <!-- Percentage Slider -->
+    <div id="percentDiv" class="flex flex-col">
+      <label for="percentInput" class="font-semibold mb-2">Resize Percentage: <span id="percentText">100%</span></label>
+      <input type="range" id="percentInput" min="10" max="200" value="100" class="w-full">
+    </div>
+
+    <!-- Custom Dimension Inputs -->
+    <div id="customDiv" class="flex flex-col gap-2 hidden">
+      <label class="font-semibold">Custom Dimensions:</label>
+      <div class="flex gap-2">
+        <input type="number" id="customWidth" placeholder="Width" class="border rounded-lg p-2 w-1/2">
+        <input type="number" id="customHeight" placeholder="Height" class="border rounded-lg p-2 w-1/2">
+      </div>
+      <label><input type="checkbox" id="aspectLock" checked> Maintain Aspect Ratio</label>
+    </div>
+
+    <!-- Process Button -->
+    <button id="processBtn" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-2xl shadow hover:bg-red-500 transition">Resize Image</button>
+
+    <!-- Download Button -->
+    <a id="downloadBtn" href="#" download="resized-image.jpg" class="hidden px-6 py-3 bg-green-600 text-white font-semibold rounded-2xl shadow hover:bg-green-500 transition text-center">Download Image</a>
+  </div>
+</section>
+
+<!-- Ad Slot -->
+<section class="max-w-5xl mx-auto px-6 py-8">
+  <div class="ad-slot rounded-2xl border border-slate-200 p-6 text-center min-h-[180px]">
+    <div class="text-xs uppercase tracking-wide text-slate-500">Ad</div>
+    <div class="font-semibold">Responsive Ad Slot</div>
+    <div class="text-slate-500 text-sm">(Insert AdSense code here)</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-6 text-sm">
+    <div>
+      <div class="font-semibold">Image Tools</div>
+      <p class="mt-2 text-slate-600">Free, browser-based tools to optimize your images safely and quickly.</p>
+    </div>
+    <nav class="space-y-2">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="compressor.html" class="block hover:text-blue-600">Compressor</a>
+      <a href="resizer.html" class="block hover:text-blue-600">Resizer</a>
+    </nav>
+    <nav class="space-y-2">
+      <a href="faq.html" class="block hover:text-blue-600">FAQ</a>
+      <a href="privacy.html" class="block hover:text-blue-600">Privacy</a>
+      <a href="terms.html" class="block hover:text-blue-600">Terms</a>
+    </nav>
+    <div class="space-y-2">
+      <div class="font-semibold">Contact</div>
+      <p class="text-slate-600">hello@example.com</p>
+    </div>
+  </div>
+  <div class="text-center text-xs text-slate-500 py-4">© <span id="year"></span> Image Tools. All rights reserved.</div>
+</footer>
+
+<script>
+  // Year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Toggle resize options
+  const percentDiv = document.getElementById('percentDiv');
+  const customDiv = document.getElementById('customDiv');
+  document.querySelectorAll('input[name="resizeMethod"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'percent') {
+        percentDiv.classList.remove('hidden');
+        customDiv.classList.add('hidden');
+      } else {
+        percentDiv.classList.add('hidden');
+        customDiv.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Update percentage text
+  const percentInput = document.getElementById('percentInput');
+  const percentText = document.getElementById('percentText');
+  percentInput.addEventListener('input', () => percentText.textContent = `${percentInput.value}%`);
+
+  // Resize image
+  const processBtn = document.getElementById('processBtn');
+  const imageInput = document.getElementById('imageInput');
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  processBtn.addEventListener('click', () => {
+    if (!imageInput.files[0]) { alert('Please select an image!'); return; }
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = new Image();
+      img.onload = function() {
+        let width = img.width;
+        let height = img.height;
+
+        if (document.querySelector('input[name="resizeMethod"]:checked').value === 'percent') {
+          const percent = percentInput.value / 100;
+          width *= percent;
+          height *= percent;
+        } else {
+          width = parseInt(document.getElementById('customWidth').value) || width;
+          height = parseInt(document.getElementById('customHeight').value) || height;
+          const lock = document.getElementById('aspectLock').checked;
+          if (lock) { height = img.height * (width / img.width); }
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        downloadBtn.href = canvas.toDataURL('image/jpeg', 0.9);
+        downloadBtn.classList.remove('hidden');
+      }
+      img.src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+  });
+</script>
+</body>
+</html>
