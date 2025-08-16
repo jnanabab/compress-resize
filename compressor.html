@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Compressor – Free Online Tool</title>
+  <meta name="description" content="Compress images online for free. Adjust compression levels and download optimized images instantly. SEO friendly and AdSense ready.">
+  <link rel="canonical" href="https://www.example.com/compressor.html" />
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Compressor – Free Online Tool">
+  <meta property="og:description" content="Compress images online for free. Adjust compression levels and download optimized images instantly.">
+  <meta property="og:image" content="https://www.example.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * { outline-color: #2563eb; }
+    html { scroll-behavior: smooth; }
+    .ad-slot { background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- Header -->
+<header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg"><span class="text-blue-600">▦</span> Image Tools</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="compressor.html" class="hover:text-blue-600 font-bold">Compressor</a>
+        <a href="resizer.html" class="hover:text-blue-600">Resizer</a>
+        <a href="faq.html" class="hover:text-blue-600">FAQ</a>
+        <a href="privacy.html" class="hover:text-blue-600">Privacy</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Compress Your Images</h1>
+    <p class="text-lg md:text-xl mb-6">Reduce image file size without losing quality. Fast, safe, and completely in your browser.</p>
+  </div>
+</section>
+
+<!-- Compressor Tool -->
+<section class="max-w-3xl mx-auto px-6 py-12 bg-white rounded-2xl shadow-lg -mt-12 relative z-10">
+  <div class="flex flex-col gap-6">
+
+    <!-- Image Upload -->
+    <input type="file" id="imageInput" accept="image/*" class="border rounded-lg p-2">
+
+    <!-- Compression Level -->
+    <div class="flex flex-col">
+      <label for="compressionLevel" class="font-semibold mb-2">Compression Level: <span id="levelText">80%</span></label>
+      <input type="range" id="compressionLevel" min="10" max="100" value="80" class="w-full">
+    </div>
+
+    <!-- Process Button -->
+    <button id="processBtn" class="px-6 py-3 bg-red-600 text-white font-semibold rounded-2xl shadow hover:bg-red-500 transition">Process Image</button>
+
+    <!-- Download Button -->
+    <a id="downloadBtn" href="#" download="compressed-image.jpg" class="hidden px-6 py-3 bg-green-600 text-white font-semibold rounded-2xl shadow hover:bg-green-500 transition text-center">Download Image</a>
+  </div>
+</section>
+
+<!-- Ad Slot -->
+<section class="max-w-5xl mx-auto px-6 py-8">
+  <div class="ad-slot rounded-2xl border border-slate-200 p-6 text-center min-h-[180px]">
+    <div class="text-xs uppercase tracking-wide text-slate-500">Ad</div>
+    <div class="font-semibold">Responsive Ad Slot</div>
+    <div class="text-slate-500 text-sm">(Insert AdSense code here)</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-6 text-sm">
+    <div>
+      <div class="font-semibold">Image Tools</div>
+      <p class="mt-2 text-slate-600">Free, browser-based tools to optimize your images safely and quickly.</p>
+    </div>
+    <nav class="space-y-2">
+      <a href="index.html" class="block hover:text-blue-600">Home</a>
+      <a href="compressor.html" class="block hover:text-blue-600">Compressor</a>
+      <a href="resizer.html" class="block hover:text-blue-600">Resizer</a>
+    </nav>
+    <nav class="space-y-2">
+      <a href="faq.html" class="block hover:text-blue-600">FAQ</a>
+      <a href="privacy.html" class="block hover:text-blue-600">Privacy</a>
+      <a href="terms.html" class="block hover:text-blue-600">Terms</a>
+    </nav>
+    <div class="space-y-2">
+      <div class="font-semibold">Contact</div>
+      <p class="text-slate-600">hello@example.com</p>
+    </div>
+  </div>
+  <div class="text-center text-xs text-slate-500 py-4">© <span id="year"></span> Image Tools. All rights reserved.</div>
+</footer>
+
+<script>
+  // Update compression level text
+  const compressionLevel = document.getElementById('compressionLevel');
+  const levelText = document.getElementById('levelText');
+  compressionLevel.addEventListener('input', () => {
+    levelText.textContent = `${compressionLevel.value}%`;
+  });
+
+  // Simple image compression using canvas
+  const processBtn = document.getElementById('processBtn');
+  const imageInput = document.getElementById('imageInput');
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  processBtn.addEventListener('click', () => {
+    if (!imageInput.files[0]) {
+      alert('Please select an image!');
+      return;
+    }
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const quality = compressionLevel.value / 100;
+        const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+        downloadBtn.href = compressedDataUrl;
+        downloadBtn.classList.remove('hidden');
+      }
+      img.src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+  });
+
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
